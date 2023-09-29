@@ -5,19 +5,19 @@ import Modal from './Modal';
 import { useState } from "react";
 
 const Resume = () => {
+   
+
     const [formData, setFormData] = useState({});
     const handleFormSubmit = (data) => {
         setFormData(data);
+       
+          
     };
     
     const [modalOpen, setModalOpen] = useState(false); 
 
     const handleModalOpening = () => {
         setModalOpen(!modalOpen)
-        if(modalOpen){
-            console.log(modalOpen);
-            
-        }
       
     };
     const changeName = modalOpen?  "+" : "-";
@@ -33,7 +33,8 @@ const Resume = () => {
                 <General formData={formData} />
                 <Education formData={formData} />
                 <Practical formData={formData} />
-                <Modal onSubmit={handleFormSubmit} style={ {display: !modalOpen ? "block" : "none"}} modalCont= {{display: !modalOpen? "grid" : "none"}}/>
+                
+                <Modal onSubmit={handleFormSubmit} style={ {display: !modalOpen ? "block" : "none"}} modalCont= {{display: !modalOpen? "grid" : "none"}} click= {handleModalOpening}/>
             </div>
         </>
     );

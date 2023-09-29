@@ -2,14 +2,15 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
-const Modal = ({ onSubmit , style, modalCont}) => {
+const Modal = ({ onSubmit , style, modalCont, click}) => {
  
   const form = useForm();
-  const { register, control, handleSubmit } = form;
+  const { register, control, handleSubmit, formState } = form;
 
-  
+  const isFormValid = formState.isValid;
   const handleFormSubmit = (data) => {
     onSubmit(data)
+    click()
     console.log('form submitted', data);
   };
  
@@ -57,7 +58,7 @@ const Modal = ({ onSubmit , style, modalCont}) => {
             <input type="date" {...register ("datebegan")}id=" datebegan" />
             <input type="date" {...register ("dateend")}id=" datebegan" />
           </section>
-          <button type="submit">Submit</button>
+          <button type="submit" className="submit" >Submit</button>
         </form>
         <DevTool control={control} />
       </div>

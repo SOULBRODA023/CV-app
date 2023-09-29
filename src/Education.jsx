@@ -1,5 +1,5 @@
 import './index.css'
-const Education = () => {
+const Education = ({formData}) => {
     return ( 
         <section className="education">
             <div className="name">
@@ -8,13 +8,13 @@ const Education = () => {
             </div>
 
             <div className="school">
-                <p className="schoolName">{FormData.education}</p>
+                <p className="schoolName">{formData.education}</p>
             </div>
             <div className="course">
-                <p>{FormData.course}</p>
+                <p>{formData.course}</p>
             </div>
             <div className="date">
-                <p>{FormData.date}</p>
+                <p>{formData.date}</p>
             </div>
         </section>
 
