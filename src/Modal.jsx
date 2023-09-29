@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
-const Modal = ({ onSubmit }) => {
+const Modal = ({ onSubmit , style, modalCont}) => {
  
   const form = useForm();
   const { register, control, handleSubmit } = form;
@@ -12,10 +12,11 @@ const Modal = ({ onSubmit }) => {
     onSubmit(data)
     console.log('form submitted', data);
   };
+ 
 
   return (
-    <div className="modalContainer">
-      <div className="modal">
+    <div className="modalContainer" style={modalCont}>
+      <div className="modal" style={style}>
         <form onSubmit={handleSubmit(handleFormSubmit)}>
           <section className="personalModal">
             <label htmlFor="fullname">Name</label>
@@ -39,6 +40,22 @@ const Modal = ({ onSubmit }) => {
 
             <label htmlFor="date">Date of Study</label>
             <input type="date" {...register("date")} id="date" />
+          </section>
+          <section className="experience">
+            <label htmlFor="company">Company worked for?<small><i>write nil if none</i></small></label>
+            <input type="text" id="company"  {...register("company")} placeholder="Alphabet Inc..."/>
+
+            <label htmlFor="role">Title</label>
+            <input type="text" id="role" {...register("role")} placeholder="title while working..."/>
+
+            <label htmlFor="responsibilities">responsibility</label>
+            <input type="text" id="responsibilities" {...register("responsibilities")} placeholder="reponsibility in the company..." />
+            <input type="text" id="responsibilities2" {...register("responsibilities2")} placeholder="reponsibility in the company..." />
+            <input type="text" id="responsibilities3" {...register("responsibilities3")} placeholder="reponsibility in the company..." />
+
+            <label htmlFor="datebegan" className="datebegan"> date start- end</label>
+            <input type="date" {...register ("datebegan")}id=" datebegan" />
+            <input type="date" {...register ("dateend")}id=" datebegan" />
           </section>
           <button type="submit">Submit</button>
         </form>

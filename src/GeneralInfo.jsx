@@ -3,6 +3,9 @@ import './index.css'
 const GeneralInfo = ({ formData }) => {
     return ( 
         <header className="header">
+            <div className="name">
+            <button>edit</button>
+            </div>
            <section className="personals"> 
                 <div className="image__container">
                     <img src="" alt="" />

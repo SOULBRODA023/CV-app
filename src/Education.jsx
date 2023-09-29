@@ -2,7 +2,11 @@ import './index.css'
 const Education = () => {
     return ( 
         <section className="education">
-            <h4 className="title">EDUCATIONAL EXPERIENCE</h4> 
+            <div className="name">
+            <h4 className="title">EDUCATIONAL EXPERIENCE</h4>
+            <button>edit</button>
+            </div>
+
             <div className="school">
                 <p className="schoolName">{FormData.education}</p>
             </div>
