@@ -2,14 +2,15 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
+
 const Modal = ({ onSubmit , style, modalCont, click}) => {
  
   const form = useForm();
-  const { register, control, handleSubmit, formState } = form;
+  const { register, control, handleSubmit} = form;
 
-  const isFormValid = formState.isValid;
   const handleFormSubmit = (data) => {
     onSubmit(data)
+    console.log(FormData.profilepic)
     click()
     console.log('form submitted', data);
   };
@@ -57,8 +58,9 @@ const Modal = ({ onSubmit , style, modalCont, click}) => {
             <label htmlFor="datebegan" className="datebegan"> date start- end</label>
             <input type="date" {...register ("datebegan")}id=" datebegan" />
             <input type="date" {...register ("dateend")}id=" datebegan" />
+            <input type="file" {...register ("profilepic")} id="profilepic" />
           </section>
-          <button type="submit" className="submit" >Submit</button>
+          <button type="submit" className="submit">Submit</button>
         </form>
         <DevTool control={control} />
       </div>
