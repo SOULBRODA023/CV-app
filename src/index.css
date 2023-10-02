@@ -15,12 +15,20 @@ body{
 ul li{
     list-style-type: none;
 }
+img{
+    max-width:100%;
+    display:block
+}
 .App{
     max-width:50rem;
     display:grid;
     justify-content: center;
     position:relative;
     padding:1rem;
+}
+header{
+    display:grid;
+    grid-template-columns: repest(2, 1fr);
 }
 .header{
     display: flex;
@@ -68,7 +76,7 @@ ul li{
     padding:2rem 1.2rem;
     height:30rem;
     overflow: scroll;
-    width:30rem;
+    width:20rem;
     display: none;
     justify-content: center;
 }
@@ -76,6 +84,7 @@ label{
     display: flex;
     font-weight:bold;
     margin-bottom:0.3rem;
+    color:white;
 }
 input, .textarea{
     display:block;
@@ -107,7 +116,9 @@ input, .textarea{
     cursor: pointer;
 }
 .name{
-    display: flex;
+    margin-left:auto;
+    display:flex;
+    align-items: center;
     justify-content: space-between;
 }
 .name button{
@@ -116,6 +127,7 @@ input, .textarea{
     height:1.5rem;
     border:none;
     border:0.4rem;
+    cursor: pointer;
 }
 .submit{
     background-color: yellow;
@@ -124,4 +136,22 @@ input, .textarea{
     border:none;
     border-radius: 0.5rem;
     cursor:pointer;
+}
+.edit{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items:center;
+    justify-content: space-between;
+}
+.date{
+    display:flex;
+    margin-top:1rem;
+    gap:1rem;
+}
+.role{
+    margin-top: 1rem;
+    padding-bottom: 0.3rem;
+}
+.positionTitle{
+    letter-spacing: 0.1rem;
 }

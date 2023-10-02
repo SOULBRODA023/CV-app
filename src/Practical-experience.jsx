@@ -1,15 +1,15 @@
-const Practical = ({formData}) => {
+const Practical = ({formData, onEditClick}) => {
     return ( 
         <section className="practicals">
             <div className="name">
             <h4 className="title">EXPERIENCE</h4>
-            <button>edit</button>
+            <button onClick={()=>onEditClick(company)}>edit</button>
             </div>
             <div className="companyName">
                 <b>{formData.company}</b>
             </div>
             <div className="positionTitle">
-                <p>{formData.role}</p>
+                <b><p>{formData.role}</p></b>
             </div>
             <div className="role">
                 <ul>
@@ -19,7 +19,7 @@ const Practical = ({formData}) => {
                 </ul>
             </div>
             <div className="date">
-                <p className="datebegan">{formData.datebegan}</p>- <p className="dateexpired">{formData.dateend}</p>
+                <p className="datebegan">{formData.datebegan}</p> <p>till</p> <p className="dateexpired">{formData.dateend}</p>
             </div>
 
         </section>

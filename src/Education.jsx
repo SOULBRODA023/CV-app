@@ -1,10 +1,10 @@
 import './index.css'
-const Education = ({formData}) => {
+const Education = ({formData, onEditClick}) => {
     return ( 
         <section className="education">
             <div className="name">
             <h4 className="title">EDUCATIONAL EXPERIENCE</h4>
-            <button>edit</button>
+            <button  onClick={()=>onEditClick("course")}>edit</button>
             </div>
 
             <div className="school">
